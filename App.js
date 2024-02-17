@@ -9,6 +9,7 @@ import { Icon } from "react-native-elements";
 import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
+import Calculator from "./screens/Calculator";
 
 
 const Stack = createNativeStackNavigator();
@@ -44,7 +45,7 @@ export default function App() {
               },
             }}
           >
-            {(props) => <HomeScreen {...props} openSearch={openSearch} />}
+            {(props) => <Calculator {...props} openSearch={openSearch} />}
           </Stack.Screen>
         </Stack.Navigator>
         <StatusBar />
