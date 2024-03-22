@@ -10,6 +10,8 @@ import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import Calculator from "./screens/Calculator";
+import Screen1 from "./screens/Screen1";
+import Screen2 from "./screens/Screen2";
 
 
 const Stack = createNativeStackNavigator();
@@ -35,7 +37,7 @@ export default function App() {
                   onPress={() => setOpenSearch(!openSearch)}
                 />
               ),
-              title: "Conteo Electoral",
+              title: "Camilo Carmona",
               headerTintColor: "#fff",
               headerTitleStyle: {
                 fontWeight: "bold",
@@ -45,8 +47,9 @@ export default function App() {
               },
             }}
           >
-            {(props) => <Calculator {...props} openSearch={openSearch} />}
+            {(props) => <Screen1 {...props} openSearch={openSearch} />}
           </Stack.Screen>
+          <Stack.Screen name="Screen2" component={Screen2} />
         </Stack.Navigator>
         <StatusBar />
       </NavigationContainer>
