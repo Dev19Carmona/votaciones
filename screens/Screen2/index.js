@@ -1,7 +1,8 @@
 import React from 'react'
-import {  View, StyleSheet } from 'react-native'
+import {  View } from 'react-native'
 
 const Screen2 = () => {
+  
   return (
     <View style={{ flex: 1, backgroundColor: 'gray'}}>
       
