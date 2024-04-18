@@ -7,25 +7,10 @@
     <list default="true" id="113997aa-dccf-441b-a3ca-8e583aafd831" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/LoginForm/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/RegisterForm/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Votes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/Bill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/Category.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/Company.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/Gender.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/Product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/Provider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/SubCategory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/Table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/User.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useCalculator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useLogin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useRegister.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Calculator/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/HomeScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/HomeScreen/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Screen1/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Screen2/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
