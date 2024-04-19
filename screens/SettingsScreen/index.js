@@ -3,17 +3,21 @@ import { View, Text, StyleSheet, ScrollView, Switch } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { StorageAdapter } from '../../config/storage';
 import { useNavigation } from '@react-navigation/native';
+import { useLogout } from '../../hooks/useLogout';
 
-const SettingsScreen = () => {
-  const navigation = useNavigation();
+const SettingsScreen = ({route}) => {
+  const {user} = route.params
+  const {handleLogout} = useLogout()
+  // const navigation = useNavigation();
   const [isNotificationsEnabled, setIsNotificationsEnabled] = useState(true);
   const [isLocationEnabled, setIsLocationEnabled] = useState(false);
 
-  const handleLogout = async () => {
-    await StorageAdapter.removeData('token');
-    await StorageAdapter.removeData('user');
-    navigation.navigate('NavigatorManagmentAccountScreen');
-  };
+  // const handleLogout = async () => {
+  //   await StorageAdapter.removeData('token');
+  //   await StorageAdapter.removeData('user');
+  //   navigation.navigate('NavigatorManagmentAccountScreen');
+  // };
+
 
   const toggleNotifications = () => {
     setIsNotificationsEnabled(!isNotificationsEnabled);

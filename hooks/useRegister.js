@@ -12,7 +12,6 @@ export const useRegister = () => {
   });
   const navigation = useNavigation();
   const handleLogin = async () => {
-    console.log("entro");
     fetchAdapter(
       "http://192.168.1.2:3000/api/auth/register",
       "POST",
@@ -21,7 +20,6 @@ export const useRegister = () => {
     )
       .then(async (session) => {
         setSession(session);
-        console.log(session);
         await StorageAdapter.saveData("token", session.token);
         navigation.navigate("NavigatorScreen");
       })

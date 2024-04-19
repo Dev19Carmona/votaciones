@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="113997aa-dccf-441b-a3ca-8e583aafd831" name="Changes" comment="" />
+    <list default="true" id="113997aa-dccf-441b-a3ca-8e583aafd831" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useLogout.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useLogout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/HomeScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/HomeScreen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/NavigatorScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NavigatorScreen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/SettingsScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/SettingsScreen/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

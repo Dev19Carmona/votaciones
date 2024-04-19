@@ -1,18 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./screens/HomeScreen";
 import { Image, StyleSheet } from "react-native";
-import pexelLogo from "./assets/pexels.png";
-import { useState } from "react";
+import calendar from "./assets/calendario.png"
 import { Icon } from "react-native-elements";
 import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-import LoginScreen from "./screens/LoginScreen";
-import { StorageAdapter } from "./config/storage";
-import TestScreen from "./screens/TestScreen";
 import NavigatorScreen from "./screens/NavigatorScreen";
 import NavigatorManagmentAccountScreen from "./screens/NavigatorManagmentAccountScreen";
+import { useAuthStore } from "./store";
 
 const Stack = createNativeStackNavigator();
 const client = new ApolloClient({
@@ -20,15 +16,15 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 const options = {
-  headerLeft: () => <Image source={pexelLogo} style={style.logo} />,
+  headerLeft: () => <Image source={calendar} style={style.logo} />,
   headerRight: () => (
     <Icon
       name="menu"
       style={{ color: "#fff", fontWeight: 200 }}
-      onPress={() => setOpenSearch(!openSearch)}
+      onPress={() => {}}
     />
   ),
-  title: "Camilo Carmona",
+  title: "Appointments App",
   headerTintColor: "#fff",
   headerTitleStyle: {
     fontWeight: "bold",
@@ -39,26 +35,12 @@ const options = {
 };
 
 export default function App() {
-  const getSession = async () => {
-    try {
-      const token = await StorageAdapter.getData("token");
-      const user = await StorageAdapter.getData("user");
-      console.log({ token, user });
-      if (!token && !user) {
-        return undefined;
-      }
-      return { token, user };
-    } catch (err) {
-      console.error("Error al obtener el token:", err);
-    }
-  };
-  const [session, setSession] = useState(getSession() ?? null);
+  
+  const status = useAuthStore(state => state.status)
   const initialRoute =
-    session?.user && session?.token
+  status === 'authenticated'
       ? "NavigatorScreen"
       : "NavigatorManagmentAccountScreen";
-  console.log({ session, type: typeof session });
-
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={initialRoute}>

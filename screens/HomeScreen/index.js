@@ -1,12 +1,13 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import React from 'react'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
 
-const HomeScreen = () => {
+const HomeScreen = ({route}) => {
+  const { user } = route.params
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Dashboard</Text>
+        <Text style={styles.headerText}>{user?.name || 'Dashboard'}</Text>
       </View>
 
       <View style={styles.card}>
@@ -41,8 +42,8 @@ const HomeScreen = () => {
         <Text style={styles.cardValue}>4.8/5</Text>
       </View>
     </ScrollView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -90,6 +91,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
-});
+})
 
-export default HomeScreen;
+export default HomeScreen
