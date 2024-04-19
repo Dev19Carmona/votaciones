@@ -1,32 +1,24 @@
-import React, { useState } from 'react';
+// RegisterForm.js
+import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
 const RegisterForm = (props) => {
-
-  const { 
-    handleLogin,
-    handleChange, 
-    credentials
-  } = props
+  const { handleLogin, handleChange, credentials } = props;
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Registrarse</Text>
       <TextInput
         style={styles.input}
         placeholder="Nombre"
         value={credentials.name}
-        onChangeText={text => handleChange(text, 'name')}
-        // onChangeText={setEmail}
-        // keyboardType="name"
-        autoCapitalize="none"
+        onChangeText={(text) => handleChange(text, 'name')}
+        autoCapitalize="words"
       />
       <TextInput
         style={styles.input}
         placeholder="Correo electrónico"
         value={credentials.email}
-        onChangeText={text => handleChange(text, 'email')}
-        // onChangeText={setEmail}
+        onChangeText={(text) => handleChange(text, 'email')}
         keyboardType="email-address"
         autoCapitalize="none"
       />
@@ -34,10 +26,15 @@ const RegisterForm = (props) => {
         style={styles.input}
         placeholder="Contraseña"
         value={credentials.password}
-        onChangeText={text => handleChange(text, 'password')}
+        onChangeText={(text) => handleChange(text, 'password')}
         secureTextEntry
       />
-      <Button title="Registrar" onPress={handleLogin} />
+      <Button
+        style={styles.button}
+        title="Registrar"
+        onPress={handleLogin}
+        color="#6200ee"
+      />
     </View>
   );
 };
@@ -45,20 +42,31 @@ const RegisterForm = (props) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    marginTop: 50,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
   },
   input: {
-    width: '100%',
-    height: 40,
-    borderColor: 'gray',
+    // width: '100%',
+    height: 50,
+    borderColor: '#ccc',
     borderWidth: 1,
-    borderRadius: 5,
-    marginBottom: 10,
-    paddingHorizontal: 10,
+    borderRadius: 8,
+    marginBottom: 20,
+    paddingHorizontal: 15,
+    fontSize: 16,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  button: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+    textAlign: 'center',
   },
 });
 
