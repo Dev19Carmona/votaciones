@@ -1,13 +1,12 @@
 import React from 'react';
-import TestScreen2 from '../TestScreen2';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../HomeScreen';
-import SettingsScreen from '../SettingsScreen';
+import RegisterScreen from '../RegisterScreen';
+import LoginScreen from '../LoginScreen';
 import { Icons } from '../../config/adapters/icons.adapter';
 
-const NavigatorScreen = () => {
+const NavigatorManagmentAccountScreen = () => {
   const Tab = createBottomTabNavigator();
-  
+
   return (
     <>
       <Tab.Navigator
@@ -17,22 +16,22 @@ const NavigatorScreen = () => {
         }}
       >
         <Tab.Screen
-          name="Home"
-          component={HomeScreen}
+          name="RegisterScreen"
+          component={RegisterScreen}
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Register',
             tabBarIcon: ({ color, size }) => (
-              <Icons.IconAntDesign name="home" color={color} size={size} />
+              <Icons.IconAntDesign name="adduser" color={color} size={size} />
             ),
           }}
         />
         <Tab.Screen
-          name="Settings"
-          component={SettingsScreen}
+          name="LoginScreen"
+          component={LoginScreen}
           options={{
-            tabBarLabel: 'Settings',
+            tabBarLabel: 'Login',
             tabBarIcon: ({ color, size }) => (
-              <Icons.IconAntDesign name="setting" color={color} size={size} />
+              <Icons.IconAntDesign name="login" color={color} size={size} />
             ),
           }}
         />
@@ -41,4 +40,4 @@ const NavigatorScreen = () => {
   );
 };
 
-export default NavigatorScreen;
+export default NavigatorManagmentAccountScreen;
