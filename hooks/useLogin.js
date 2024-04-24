@@ -13,7 +13,7 @@ export const useLogin = () => {
   const navigation = useNavigation()
   const handleLogin = async () => {
     fetchAdapter(
-      'http://10.2.20.119:3000/api/auth/login',
+      'http://192.168.1.2:3000/api/auth/login',
       'POST',
       {},
       credentials

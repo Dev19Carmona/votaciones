@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import RequestAppointmentForm from "../../components/RequestAppointmentForm";
+import PetRegisterForm from "../../components/PetRegisterForm";
 
 const RequestAppointmentScreen = ({route}) => {
   const {user} = route.params
@@ -8,7 +9,7 @@ const RequestAppointmentScreen = ({route}) => {
   return (
     <>
      <View>
-      <RequestAppointmentForm/>
+      <PetRegisterForm/>
      </View>
     </>
   );

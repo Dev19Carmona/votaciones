@@ -68,6 +68,8 @@ const SettingsScreen = ({route}) => {
           </Text>
         </View>
       </View>
+
+      
     </ScrollView>
   );
 };

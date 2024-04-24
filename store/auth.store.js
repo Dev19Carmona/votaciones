@@ -13,6 +13,7 @@ const storeApi = (set) => ({
     set({ status: 'unauthenticated', token: undefined, user: undefined })
   },
 })
+
 export const useAuthStore = create(
   persist(storeApi, {
     name: 'auth-session',
