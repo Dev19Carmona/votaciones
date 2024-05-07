@@ -1,24 +1,44 @@
 import React from 'react'
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import { useDashboard } from '../../hooks/useDashboard'
+import PetRegisterForm from '../../components/PetRegisterForm'
 
 const HomeScreen = ({route}) => {
+
+  const {
+    openModal,
+    closeModal,
+    modalVisible,
+    initialValues,
+    dataPet,
+    handleChange
+  } = useDashboard()
+
   const { user } = route.params
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>{user?.name || 'Dashboard'}</Text>
       </View>
-
-      <View style={styles.section} onPress={()=>{console.log('true')}}>
+    
+      <Pressable onPress={openModal} style={styles.section}>
         <Text style={styles.sectionTitle}>Añadir Mascota</Text>
-        <View style={styles.settingRow}>
+        <View style={styles.settingRow} >
           <Ionicons name="add" size={24} color="#6200ee" />
           <Text style={styles.settingLabel} >
             
           </Text>
         </View>
-      </View>
+      </Pressable>
+      <PetRegisterForm props={{
+    openModal,
+    closeModal,
+    modalVisible,
+    initialValues,
+    dataPet,
+    handleChange
+  }}/>
 
       <View style={styles.card}>
         <View style={styles.cardHeader}>

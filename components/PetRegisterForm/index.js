@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Modal, TextInput, StyleSheet } from 'react-native';
 
-const PetRegisterForm = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+const PetRegisterForm = ({props}) => {
+  const {
+    openModal,
+    closeModal,
+    modalVisible,
+    initialValues,
+    dataPet,
+    handleChange
+  } = props
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [age, setAge] = useState('');
@@ -12,15 +19,6 @@ const PetRegisterForm = () => {
   const [weight, setWeight] = useState('');
   const [medicalHistory, setMedicalHistory] = useState('');
   const [ownerId, setOwnerId] = useState('');
-
-  const openModal = () => {
-    setModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setModalVisible(false);
-  };
-
   const handleSubmit = () => {
     // Aquí puedes enviar los datos del formulario a tu backend o realizar alguna otra acción
     console.log('Nombre:', name);
@@ -37,7 +35,6 @@ const PetRegisterForm = () => {
 
   return (
     <>
-      <Button title="Abrir Formulario" onPress={openModal} />
     <View style={styles.container}>
       <Modal
         animationType="slide"
@@ -51,45 +48,45 @@ const PetRegisterForm = () => {
             <TextInput
               style={styles.input}
               placeholder="Nombre"
-              onChangeText={setName}
-              value={name}
+              onChangeText={(text) => handleChange(text, 'name')}
+              value={dataPet.name}
             />
             <TextInput
               style={styles.input}
               placeholder="Descripción"
-              onChangeText={setDescription}
-              value={description}
+              onChangeText={(text) => handleChange(text, 'description')}
+              value={dataPet.description}
             />
             <TextInput
               style={styles.input}
               placeholder="Edad"
               onChangeText={setAge}
-              value={age}
+              value={dataPet.age}
               keyboardType="numeric"
             />
             <TextInput
               style={styles.input}
               placeholder="Referencia"
               onChangeText={setReference}
-              value={reference}
+              value={dataPet.reference}
             />
             <TextInput
               style={styles.input}
               placeholder="Especie"
               onChangeText={setSpecie}
-              value={specie}
+              value={dataPet.specie}
             />
             <TextInput
               style={styles.input}
               placeholder="Género"
               onChangeText={setGender}
-              value={gender}
+              value={dataPet.gender}
             />
             <TextInput
               style={styles.input}
               placeholder="Peso"
               onChangeText={setWeight}
-              value={weight}
+              value={dataPet.weight}
               keyboardType="numeric"
             />
             <Button style={styles.buttonStyle} title="Registrar Mascota" onPress={handleSubmit} />

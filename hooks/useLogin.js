@@ -3,6 +3,7 @@ import { fetchAdapter } from '../config/adapters/fetch.adapter'
 import { useNavigation } from '@react-navigation/native'
 import { StorageAdapter } from '../config/storage'
 import { useAuthStore } from '../store'
+import { envs } from '../env'
 
 export const useLogin = () => {
   const { login } = useAuthStore((state) => state)
@@ -13,7 +14,7 @@ export const useLogin = () => {
   const navigation = useNavigation()
   const handleLogin = async () => {
     fetchAdapter(
-      'http://192.168.1.2:3000/api/auth/login',
+      `${envs.DEV_IP}${envs.LOGIN_PATH}`,
       'POST',
       {},
       credentials
