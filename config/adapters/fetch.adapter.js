@@ -15,7 +15,13 @@ export const fetchAdapter = async (url, method = 'POST', headers = {}, body = nu
           throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
       })
-      .then(data => resolve(data))
-      .catch(error => reject(error));
+      .then(data => {
+        console.log(data);
+        return resolve(data)
+      })
+      .catch(error => {
+        console.log(error);
+        return reject(error)
+      });
   });
 };

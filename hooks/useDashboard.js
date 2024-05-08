@@ -1,35 +1,47 @@
-import { useState } from "react"
+import { useState } from "react";
+import { fetchAdapter } from "../config/adapters/fetch.adapter";
+import { envs } from "../env";
 
-export const useDashboard = () => {
+export const useDashboard = (token) => {
   const handleChange = (text, name) => {
-    setDataPet({ ...dataPet, [name]: text })
-  }
-  const [modalVisible, setModalVisible] = useState(false)
-  console.log({modalVisible});
+    setDataPet({ ...dataPet, [name]: text });
+  };
+  const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => {
-    setModalVisible(true)
-  }
+    setModalVisible(true);
+  };
 
   const closeModal = () => {
-    setModalVisible(false)
-  }
+    setModalVisible(false);
+  };
 
   const initialValues = {
-    name: 'firulais',
-    description: '',
-    age: 5,
-    reference: '',
-    specie: 'perro',
-    gender: 'male',
-    weight: 50,
-  }
-  const [dataPet, setDataPet] = useState(initialValues)
+    name: "firulais",
+    description: "",
+    age: "5",
+    reference: "",
+    specie: "perro",
+    gender: "male",
+    weight: "50",
+  };
+  const [dataPet, setDataPet] = useState(initialValues);
+  const handleSubmitCreatePet = () => {
+    fetchAdapter(
+      `${envs.DEV_IP}${envs.REGISTER_PET_PATH}`,
+      "POST",
+      { Authorization: `Bearer ${token}` },
+      dataPet
+    );
+    closeModal()
+    setDataPet(initialValues)
+  };
   return {
     openModal,
     closeModal,
     modalVisible,
     initialValues,
     dataPet,
-    handleChange
-  }
-}
+    handleChange,
+    handleSubmitCreatePet,
+  };
+};

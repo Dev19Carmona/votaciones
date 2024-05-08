@@ -9,8 +9,9 @@ import RequestAppointmentScreen from '../RequestAppointmentScreen'
 
 const NavigatorScreen = () => {
   const user = useAuthStore((state) => state.user)
+  const token = useAuthStore((state) => state.token)
   const Tab = createBottomTabNavigator()
-  const generalProps = { user }
+  const generalProps = { user,token }
   const homeScreenProps = { ...generalProps }
   const settingsScreenProps = { ...generalProps }
   const requestAppointmentScreenProps = { ...generalProps }
@@ -23,17 +24,7 @@ const NavigatorScreen = () => {
           tabBarInactiveTintColor: 'gray',
         }}
       >
-        <Tab.Screen
-          name="Solicitar Cita"
-          component={RequestAppointmentScreen}
-          initialParams={requestAppointmentScreenProps}
-          options={{
-            tabBarLabel: 'Request',
-            tabBarIcon: ({ color, size }) => (
-              <Icons.IconAntDesign name="setting" color={color} size={size} />
-            ),
-          }}
-        />
+        
         <Tab.Screen
           name="Home"
           component={HomeScreen}

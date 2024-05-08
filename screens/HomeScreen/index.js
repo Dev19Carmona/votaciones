@@ -1,44 +1,42 @@
-import React from 'react'
-import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native'
-import { Ionicons } from '@expo/vector-icons'
-import { useDashboard } from '../../hooks/useDashboard'
-import PetRegisterForm from '../../components/PetRegisterForm'
+import React from "react";
+import { View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { useDashboard } from "../../hooks/useDashboard";
+import PetRegisterForm from "../../components/PetRegisterForm";
 
-const HomeScreen = ({route}) => {
-
+const HomeScreen = ({ route }) => {
+  const { user, token } = route.params;
   const {
     openModal,
     closeModal,
     modalVisible,
-    initialValues,
     dataPet,
-    handleChange
-  } = useDashboard()
+    handleChange,
+    handleSubmitCreatePet,
+  } = useDashboard(token);
 
-  const { user } = route.params
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>{user?.name || 'Dashboard'}</Text>
+        <Text style={styles.headerText}>{user?.name || "Dashboard"}</Text>
       </View>
-    
+
       <Pressable onPress={openModal} style={styles.section}>
         <Text style={styles.sectionTitle}>Añadir Mascota</Text>
-        <View style={styles.settingRow} >
+        <View style={styles.settingRow}>
           <Ionicons name="add" size={24} color="#6200ee" />
-          <Text style={styles.settingLabel} >
-            
-          </Text>
+          <Text style={styles.settingLabel}></Text>
         </View>
       </Pressable>
-      <PetRegisterForm props={{
-    openModal,
-    closeModal,
-    modalVisible,
-    initialValues,
-    dataPet,
-    handleChange
-  }}/>
+      <PetRegisterForm
+        props={{
+          closeModal,
+          modalVisible,
+          dataPet,
+          handleChange,
+          handleSubmitCreatePet,
+        }}
+      />
 
       <View style={styles.card}>
         <View style={styles.cardHeader}>
@@ -64,32 +62,32 @@ const HomeScreen = ({route}) => {
         <Text style={styles.cardValue}>4.8/5</Text>
       </View>
     </ScrollView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: "#f0f0f0",
     padding: 20,
   },
   header: {
-    backgroundColor: '#6200ee',
+    backgroundColor: "#6200ee",
     padding: 20,
     borderRadius: 10,
     marginBottom: 20,
   },
   headerText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     padding: 20,
     borderRadius: 10,
     marginBottom: 20,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -99,37 +97,37 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   cardHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 10,
   },
   cardHeaderText: {
-    color: '#6200ee',
+    color: "#6200ee",
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginLeft: 10,
   },
   cardValue: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   header: {
-    backgroundColor: '#6200ee',
+    backgroundColor: "#6200ee",
     padding: 20,
     borderRadius: 10,
     marginBottom: 20,
   },
   headerText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   section: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     padding: 20,
     borderRadius: 10,
     marginBottom: 20,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -139,20 +137,20 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   sectionTitle: {
-    color: '#6200ee',
+    color: "#6200ee",
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
   },
   settingRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     marginBottom: 10,
   },
   settingLabel: {
     fontSize: 16,
   },
-})
+});
 
-export default HomeScreen
+export default HomeScreen;
