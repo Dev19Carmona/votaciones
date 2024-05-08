@@ -22,7 +22,7 @@ const HomeScreen = ({ route }) => {
       </View>
 
       <Pressable onPress={openModal} style={styles.section}>
-        <Text style={styles.sectionTitle}>Añadir Mascota</Text>
+        <Text style={styles.sectionTitle}>Add Pet</Text>
         <View style={styles.settingRow}>
           <Ionicons name="add" size={24} color="#6200ee" />
           <Text style={styles.settingLabel}></Text>

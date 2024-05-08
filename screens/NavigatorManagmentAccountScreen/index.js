@@ -16,6 +16,16 @@ const NavigatorManagmentAccountScreen = () => {
         }}
       >
         <Tab.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{
+            tabBarLabel: 'Login',
+            tabBarIcon: ({ color, size }) => (
+              <Icons.IconAntDesign name="login" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
           name="RegisterScreen"
           component={RegisterScreen}
           options={{
@@ -25,16 +35,7 @@ const NavigatorManagmentAccountScreen = () => {
             ),
           }}
         />
-        <Tab.Screen
-          name="LoginScreen"
-          component={LoginScreen}
-          options={{
-            tabBarLabel: 'Login',
-            tabBarIcon: ({ color, size }) => (
-              <Icons.IconAntDesign name="login" color={color} size={size} />
-            ),
-          }}
-        />
+        
       </Tab.Navigator>
     </>
   );

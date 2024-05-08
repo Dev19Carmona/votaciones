@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import { StorageAdapter } from '../config/storage'
 import { useAuthStore } from '../store'
 import { envs } from '../env'
+import { Alert } from 'react-native'
 
 export const useLogin = () => {
   const { login } = useAuthStore((state) => state)
@@ -29,7 +30,18 @@ export const useLogin = () => {
         navigation.navigate('NavigatorScreen')
       })
       .catch((err) => {
-        console.log(err)
+        console.log({err})
+        Alert.alert(
+          'Error',
+          'Correo electronico o contraseña incorrecto',
+          [
+            {
+              text: 'OK',
+              onPress: ()=>console.log('ok'),
+              style: 'cancel'
+            }
+          ]
+        )
         return
       })
   }

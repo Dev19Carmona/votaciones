@@ -6,6 +6,7 @@ import SettingsScreen from '../SettingsScreen'
 import { Icons } from '../../config/adapters/icons.adapter'
 import { useAuthStore } from '../../store'
 import RequestAppointmentScreen from '../RequestAppointmentScreen'
+import PetScreen from '../PetScreen'
 
 const NavigatorScreen = () => {
   const user = useAuthStore((state) => state.user)
@@ -14,7 +15,7 @@ const NavigatorScreen = () => {
   const generalProps = { user,token }
   const homeScreenProps = { ...generalProps }
   const settingsScreenProps = { ...generalProps }
-  const requestAppointmentScreenProps = { ...generalProps }
+  const myPetsProps = { ...generalProps }
   return (
     <>
       <Tab.Navigator
@@ -23,7 +24,18 @@ const NavigatorScreen = () => {
           tabBarActiveTintColor: 'tomato',
           tabBarInactiveTintColor: 'gray',
         }}
-      >
+      > 
+      <Tab.Screen
+      name="My Pets"
+      component={PetScreen}
+      initialParams={myPetsProps}
+      options={{
+        tabBarLabel: 'MyPets',
+        tabBarIcon: ({ color, size }) => (
+          <Icons.Entypo name="baidu" color={color} size={size} />
+        ),
+      }}
+    />
         
         <Tab.Screen
           name="Home"
