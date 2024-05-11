@@ -1,5 +1,5 @@
 export const envs = {
-  DEV_IP: "http://10.2.20.119:3000",
+  DEV_IP: "http://190.248.0.7:3000",
   LOGIN_PATH: "/api/auth/login",
   REGISTER_PET_PATH: "/api/pet/register"
 }
