@@ -8,11 +8,7 @@ const RequestAppointmentForm = () => {
   const [time, setTime] = useState('');
 
   const handleSubmit = () => {
-    // Aquí puedes enviar los datos del formulario a tu backend o realizar alguna otra acción
-    console.log('Nombre:', name);
-    console.log('Email:', email);
-    console.log('Fecha:', date);
-    console.log('Hora:', time);
+ 
   };
 
   return (

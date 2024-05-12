@@ -7,8 +7,13 @@ import { Icons } from '../../config/adapters/icons.adapter'
 import { useAuthStore } from '../../store'
 import RequestAppointmentScreen from '../RequestAppointmentScreen'
 import PetScreen from '../PetScreen'
+import { TouchableOpacity } from 'react-native'
+import { useNavButtons } from '../../hooks/useNavButtons'
+import TabBarButton from '../../components/TabBarButton'
+import { useNavigation } from '@react-navigation/native'
 
 const NavigatorScreen = () => {
+  const navigation = useNavigation();
   const user = useAuthStore((state) => state.user)
   const token = useAuthStore((state) => state.token)
   const Tab = createBottomTabNavigator()
@@ -16,6 +21,7 @@ const NavigatorScreen = () => {
   const homeScreenProps = { ...generalProps }
   const settingsScreenProps = { ...generalProps }
   const myPetsProps = { ...generalProps }
+  const {handleGetMyPets} = useNavButtons()
   return (
     <>
       <Tab.Navigator
@@ -26,7 +32,7 @@ const NavigatorScreen = () => {
         }}
       > 
       <Tab.Screen
-      name="My Pets"
+      name="MyPets"
       component={PetScreen}
       initialParams={myPetsProps}
       options={{
@@ -34,6 +40,9 @@ const NavigatorScreen = () => {
         tabBarIcon: ({ color, size }) => (
           <Icons.Entypo name="baidu" color={color} size={size} />
         ),
+        tabBarButton: (props) => (
+          <TabBarButton {...props} navigation={navigation} handleGetMyPets={handleGetMyPets}/>
+        )
       }}
     />
         
@@ -57,6 +66,7 @@ const NavigatorScreen = () => {
             tabBarIcon: ({ color, size }) => (
               <Icons.IconAntDesign name="setting" color={color} size={size} />
             ),
+            
           }}
         />
       </Tab.Navigator>

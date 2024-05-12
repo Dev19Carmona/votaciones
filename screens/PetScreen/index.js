@@ -2,23 +2,29 @@ import React from 'react'
 import { Pressable, View, StyleSheet, ScrollView, Image } from 'react-native'
 import { Text } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons'
+import { usePetList } from '../../hooks/usePetList'
 
 function PetScreen() {
   const defaultImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNZVr2VrOzKE6ipdMsmKNO_vHgXyTAIEoKmf80FsRlA&s'
+  const {myPets} = usePetList()
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>{'My Pets'}</Text>
       </View>
-      <Pressable onPress={() => {}} style={styles.section}>
+      {
+        myPets.map((pet, i)=>(
+
+      <Pressable key={i} onPress={() => {}} style={styles.section}>
         <View style={styles.petContainer}>
           <Image
             source={{ uri: defaultImage }}
             style={styles.petImage}
           />
           <View style={styles.petInfo}>
-            <Text style={styles.petName}>Firulais</Text>
-            <Text style={styles.petSpecies}>Dog</Text>
+            <Text style={styles.petName}>{pet.name}</Text>
+            <Text style={styles.petSpecies}>{pet.specie}</Text>
           </View>
         </View>
         <View style={styles.settingRow}>
@@ -26,6 +32,8 @@ function PetScreen() {
           <Text style={styles.settingLabel}>No pending</Text>
         </View>
       </Pressable>
+        ))
+      }
     </ScrollView>
   )
 }
