@@ -6,12 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="113997aa-dccf-441b-a3ca-8e583aafd831" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/RequestAppointmentForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/RequestAppointmentForm/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/adapters/fetch.adapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/adapters/fetch.adapter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/NavigatorScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NavigatorScreen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useNavButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useNavButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/usePetList.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/usePetList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/HomeScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/HomeScreen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/LoginScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LoginScreen/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/PetScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PetScreen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/SettingsScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/SettingsScreen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/my-pets.store.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/my-pets.store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -14,6 +14,7 @@ export const useLogin = () => {
   const [credentials, setCredentials] = useState(initialValues)
   const navigation = useNavigation()
   const handleLogin = async () => {
+    console.log('entro');
     fetchAdapter(
       `${envs.DEV_IP}${envs.LOGIN_PATH}`,
       'POST',

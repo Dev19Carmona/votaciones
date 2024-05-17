@@ -12,6 +12,9 @@ const storePets = (set) => ({
   getMyPets: (myPets) => {
     set({ myPets, isCallGet:true })
   },
+  toggleCallGet: () => {
+    set({isCallGet:false})
+  }
 })
 
 export const usePetStore = create(

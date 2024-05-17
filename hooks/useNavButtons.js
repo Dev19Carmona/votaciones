@@ -13,6 +13,7 @@ export const useNavButtons = () => {
       if(!isCallGet){
         fetchAdapter(`${envs.DEV_IP}${envs.MY_PETS_PATH}`,'GET', {},'',token)
         .then(async (myPets) => {
+          console.log({myPets});
           getMyPets(myPets)
           })
           .catch((err) => {

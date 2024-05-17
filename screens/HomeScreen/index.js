@@ -3,9 +3,13 @@ import { View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useDashboard } from "../../hooks/useDashboard";
 import PetRegisterForm from "../../components/PetRegisterForm";
+import PressableGeneral from "../../components/PressableGeneral";
+import { useAuthStore } from "../../store";
 
 const HomeScreen = ({ route }) => {
-  const { user, token } = route.params;
+  const { token } = route.params;
+  const user = useAuthStore((state) => state.user)
+
   const {
     openModal,
     closeModal,
@@ -20,14 +24,11 @@ const HomeScreen = ({ route }) => {
       <View style={styles.header}>
         <Text style={styles.headerText}>{user?.name || "Dashboard"}</Text>
       </View>
-
-      <Pressable onPress={openModal} style={styles.section}>
-        <Text style={styles.sectionTitle}>Add Pet</Text>
-        <View style={styles.settingRow}>
-          <Ionicons name="add" size={24} color="#6200ee" />
-          <Text style={styles.settingLabel}></Text>
-        </View>
-      </Pressable>
+    <PressableGeneral props={{
+      onPress:openModal,
+      icon: {name: "add", size: 24, color:"#6200ee"}
+    }}
+    />
       <PetRegisterForm
         props={{
           closeModal,
@@ -38,29 +39,7 @@ const HomeScreen = ({ route }) => {
         }}
       />
 
-      <View style={styles.card}>
-        <View style={styles.cardHeader}>
-          <Ionicons name="cash" size={24} color="#fff" />
-          <Text style={styles.cardHeaderText}>Ingresos</Text>
-        </View>
-        <Text style={styles.cardValue}>$98,765.43</Text>
-      </View>
-
-      <View style={styles.card}>
-        <View style={styles.cardHeader}>
-          <Ionicons name="cart" size={24} color="#fff" />
-          <Text style={styles.cardHeaderText}>Ventas</Text>
-        </View>
-        <Text style={styles.cardValue}>7,892</Text>
-      </View>
-
-      <View style={styles.card}>
-        <View style={styles.cardHeader}>
-          <Ionicons name="star" size={24} color="#fff" />
-          <Text style={styles.cardHeaderText}>Calificación</Text>
-        </View>
-        <Text style={styles.cardValue}>4.8/5</Text>
-      </View>
+      
     </ScrollView>
   );
 };

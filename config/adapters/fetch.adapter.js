@@ -23,7 +23,7 @@ export const fetchAdapter = async (
         }
       })
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         return resolve(data);
       })
       .catch((error) => {

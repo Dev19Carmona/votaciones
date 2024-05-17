@@ -28,15 +28,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
   },
   header: {
-    backgroundColor: '#6200ee',
     padding: 20,
     borderRadius: 10,
     marginBottom: 20,
   },
   headerText: {
-    color: '#fff',
-    fontSize: 24,
+    color: 'black',
+    fontSize: 49.5435535,
     fontWeight: 'bold',
+
   },
   form: {
     backgroundColor: '#fff',

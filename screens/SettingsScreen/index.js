@@ -34,32 +34,6 @@ const SettingsScreen = ({route}) => {
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Notificaciones</Text>
-        <View style={styles.settingRow}>
-          <Text style={styles.settingLabel}>Recibir notificaciones</Text>
-          <Switch
-            value={isNotificationsEnabled}
-            onValueChange={toggleNotifications}
-            trackColor={{ true: '#6200ee' }}
-            thumbColor={isNotificationsEnabled ? '#fff' : '#ccc'}
-          />
-        </View>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Ubicación</Text>
-        <View style={styles.settingRow}>
-          <Text style={styles.settingLabel}>Compartir ubicación</Text>
-          <Switch
-            value={isLocationEnabled}
-            onValueChange={toggleLocation}
-            trackColor={{ true: '#6200ee' }}
-            thumbColor={isLocationEnabled ? '#fff' : '#ccc'}
-          />
-        </View>
-      </View>
-
-      <View style={styles.section}>
         <Text style={styles.sectionTitle}>Cuenta</Text>
         <View style={styles.settingRow}>
           <Ionicons name="log-out" size={24} color="#6200ee" />
